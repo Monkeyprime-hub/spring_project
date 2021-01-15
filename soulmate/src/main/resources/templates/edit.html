@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        .validationError {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<h3 align="center">Edit User</h3>
+
+<div class="container center">
+    <form action="#" th:action="@{'/' + ${user.idUser}}" th:object="${user}" method="post">
+        <p>id:<input type="text" th:field="*{idUser}"></p>
+        <p>first name:<input type="text" th:field="*{firstName}"></p>
+        <p>last name:<input type="text" th:field="*{lastName}"></p>
+        <p>patronymic:<input type="text" th:field="*{patronymic}"></p>
+        <p>age:<input type="text" th:field="*{age}"></p>
+        <p><input type="submit" value="edit user" class="btn btn-primary green"/>
+        </p>
+    </form>
+</div>
+</body>
+</html>

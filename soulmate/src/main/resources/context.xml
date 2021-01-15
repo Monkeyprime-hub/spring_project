@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:annotation-config/>
+
+    <!--    <bean class="com.example.demo.spring_borisov.springdeep.quoters.PostProxyInvokerContextListener"/>-->
+    <!--    <bean class="com.example.demo.spring_borisov.springdeep.quoters.InjectRandomIntAnnotationBeanPostProcessor"/>-->
+    <!--    <bean class="com.example.demo.spring_borisov.springdeep.quoters.ProfilingHandlerBeanPostProcessor"/>-->
+    <!--    <bean class="com.example.demo.spring_borisov.springdeep.quoters.DeprecationHandlerBeanFactoryPostProcessor"/>-->
+
+    <bean class="com.example.soulmate.profiling.SaySomethingImpl" id="saySomething">
+        <property name="message" value="I'll be back"/>
+    </bean>
+
+
+    <!--    <bean class="org.springframework.context.annotation.CommonAnnotationBeanPostProcessor"/>-->
+
+</beans>

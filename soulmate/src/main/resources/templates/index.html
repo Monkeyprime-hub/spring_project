@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+</head>
+
+<h3 align="center">List of Users</h3>
+
+
+<table class="centered">
+    <thead>
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Patronymic</th>
+        <th>age</th>
+        <th></th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="user:${users}">
+        <td th:text="${user.firstName}"></td>
+        <td th:text="${user.lastName}"></td>
+        <td th:text="${user.patronymic}"></td>
+        <td th:text="${user.age}"></td>
+        <td><a href="" th:href="@{'/' + ${user.idUser} + '/show'}">SHOW</a></td>
+                <td><a href=""th:href="@{'/' + ${user.idUser} + '/edit'}">EDIT</a> </td>
+        <td><a href="" th:href="@{'/' + ${user.idUser} + '/delete'}">DELETE</a></td>
+    </tr>
+    </tbody>
+</table>
+
+<div class="container center">
+    <form action="#" th:action="@{/users}" th:object="${newUser}" method="post">
+        <p>First Name:<input type="text" th:field="*{firstName}"></p>
+        <p>Last Name:<input type="text" th:field="*{lastName}"></p>
+        <p>Patronymic:<input type="text" th:field="*{patronymic}"></p>
+        <p>Age:<input type="text" th:field="*{age}"></p>
+        <p><input type="submit" value="create new user" class="btn btn-primary green"/><input type="reset" value="reset"
+                                                                                              class="btn btn-primary red">
+        </p>
+    </form>
+</div>
+
+</body>
+</html>
